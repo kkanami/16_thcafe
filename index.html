@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+  <!-- prefix～はogp.meより。ほかのタグも掲載 -->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=yes,initial-scale=1.0"
+    />
+    <!-- pcとsp併用サイトのためのなにか -->
+    <meta
+      name="description"
+      content="2023年夏、TOKYO HAPPY　CAFEがオープン。こだわりのドリンクをどうぞ！"
+    />
+    <!-- 　検索エンジンの結果で見えるサイトの概要。スニペットから挿入 -->
+    <meta
+      name="keywords"
+      content="TOKYO HAPPY CAFE,TOKYOハッピーカフェ,東京ハッピーカフェ"
+    />
+    <!-- 最近では検索における重要度はない。<meta~>と打つ -->
+
+    <!-- Open Graph Meta Tags（SNSでシェアしたときに見える） -->
+    <meta property="og:title" content="TOKYO HAPPY CAFE" />
+    <meta property="og:site_name" content="TOKYO HAPPY CAFE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja-jp" />
+    <!-- 場所と言語 -->
+    <meta property="og:image" content="16_thcafe/images/common/ogp.jpg" />
+    <meta
+      property="og:description"
+      content="2023年夏、TOKYO　HAPPY　CAFEがオープン。こだわりのドリンクをどうぞ！"
+    />
+
+    <!-- twitter card data 詳しくはhttps://developer.x.com/ja/docs/tweets/optimize-with-cards/guides/getting-started -->
+    <meta name="twitter:card" content="summary" />
+
+    <title>TOKYO HAPPY CAFE</title>
+    <link rel="stylesheet" href="16_thcafe/reset.css" />
+    <link rel="stylesheet" href="16_thcafe/common.css" />
+    <link rel="stylesheet" href="16_thcafe/top.css" />
+    <link
+      href="16_thcafe/images/common/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <!-- ファビコンの設定。スニペットから -->
+    <link
+      rel="apple-touch-icon"
+      href="16_thcafe/images/common/apple-touch-icon.png"
+    />
+    <!-- スマホでデスクトップに登録したときに出るアイコンの設定 -->
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 id="top">TOKYO HAPPY CAFE</h1>
+      <div id="nav-drawer">
+        <!-- ハンバーガーメニュー用 -->
+        <input
+          id="nav-input"
+          class="none"
+          type="checkbox"
+        />　　<!-- common.cssでdisplay:noneを指定しているのでClass="none"で非表示にできる -->
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <!-- 上のチェックボックスとラベルを紐づけて、ラベルに対する藩王でチェックボックスのonoffと同等のものにする。開いていると時用 -->
+        <label id="nav-close" for="none"></label>
+        <!-- 閉じてる時用 -->
+        <nav id="nav-content" class="header__navigation">
+          <div class="nav-drawer__title none">TOKYO HAPPY CAFE</div>
+          <!-- classは２つ入れられる。間に半角スペース -->
+          <ul>
+            <li><a class="nav-drawer__link-top none" href="#top">TOP</a></li>
+            <li><a href="#menu">MENU</a></li>
+            <li><a href="#news">NEWS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="top_section__image">
+        <h2>東京駅でやすらぎのカフェタイム</h2>
+        <div class="top_section__image-message">Have a good time!</div>
+        <div class="top_section__lead">
+          <p>
+            2023年夏、TOKYO　HAPPY　CAFEがオープン。<br />
+            こだわりのドリンクをどうぞ！
+          </p>
+        </div>
+      </section>
+      <section class="menu_section">
+        <h2 id="menu">MENU</h2>
+        <ul>
+          <li>
+            <img
+              class="menu_section__item-picture"
+              src="16_thcafe/images/menu_coffee.jpg"
+              alt="coffee"
+            />
+            <h3 class="menu_section__item-title">Coffee</h3>
+            <p class="menu_section__item-description">
+              厳選した豆の香りが自慢。日替わりコーヒーがおすすめ。<br />
+              <span>コーヒー　/700　/カフェラテ/800　etc…</span>
+            </p>
+          </li>
+
+          <li>
+            <img
+              class="menu_section__item-picture"
+              src="16_thcafe/images/menu_tea.jpg"
+              alt="tea"
+            />
+            <h3 class="menu_section__item-title">Tea</h3>
+            <p class="menu_section__item-description">
+              夏はアイスティーがおすすめ！茶ばの香りが自慢です。<br />
+              <span>ダージリン　/700　/カモミール/800　etc…</span>
+            </p>
+          </li>
+
+          <li>
+            <img
+              class="menu_section__item-picture"
+              src="16_thcafe/images/menu_cake.jpg"
+              alt="cake"
+            />
+            <h3 class="menu_section__item-title">Cake</h3>
+            <p class="menu_section__item-description">
+              濃厚なチーズケーキが一番人気！テイクアウトもできます。<br />
+              <span>チーズケーキ　/880　etc…</span>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="access_section">
+        <h2 id="access">ACCESS</h2>
+        <address>
+          〒100-0005　東京都千代田区丸の内1丁目<span
+            class="access_section__break"
+          ></span
+          >東京駅構内<br />
+          0120-xxx-xxx<br />
+          Email:xxx@examle.com
+        </address>
+        <div class="access_section__map">
+          <iframe
+            src="https://maps.app.goo.gl/JKKswcDrG1afQ3Gg6"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="news_section">
+        <h2 id="news">NEWS</h2>
+        <ol>
+          <li>
+            <time datetime="20xx-xx-xx">20xx-xx-xx</time>
+            <h3>新発売：フルーツアイスティー</h3>
+            <p>
+              季節限定！メニューに新しく「フルーツアイスティー」（税込み　880円）が加わりました。
+            </p>
+          </li>
+
+          <li>
+            <time datetime="20xx-xx-xx">20xx-xx-xx</time>
+            <h3>オープンしました。</h3>
+            <p>本日10：00よりオープンにあります。ぜひお立ち寄りください。</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <nav class="footer__site-map">
+          <h2>TOKYO HAPPY CAFE</h2>
+          <ul>
+            <li><a href="#top">TOP</a></li>
+            <li><a href="#menu">MENU</a></li>
+            <li><a href="#access">ACCESS</a></li>
+            <li><a href="#news">NEWS</a></li>
+          </ul>
+        </nav>
+        <div class="footer__sns-links">
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/"
+                ><img src="16_thcafe/images/instagram.png" alt="instagram"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.x.com/"
+                ><img src="16_thcafe/images/x.png" alt="x"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/"
+                ><img src="16_thcafe/images/facebook.png" alt="facebook"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <small> &copy;TOKYO HAPPY CAFE </small>
+        <!-- @でもいいが&copy;にしておけばutf-8以外でも表示される -->
+      </div>
+    </footer>
+  </body>
+</html>

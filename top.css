@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+.header{
+    height: 44px;
+    background-color: #fff;
+    position: relative;
+}
+
+/* ハンバーガー */
+@media(max-width:480px)  {
+    #nav-drawer{
+        /* id名は#で指定 */
+        padding: 10px 24px 0 0;
+        text-align: right;
+        position: relative;
+    }
+    
+    #nav-open{
+        display: inline-block;
+        vertical-align: middle;
+        width: 25px;
+        height: 22px;
+    }
+
+    /* ラインを前後に複製したあと、位置をずらしている */
+    #nav-open span,#nav-open span::before,#nav-open span::after{
+        position: absolute;
+        height: 3px;
+        width: 25px;
+        background-color: #777;
+        display: block;
+        content: "";
+    }
+
+    #nav-open span::before{
+        bottom: -8px;
+    }
+
+    #nav-open span::after{
+        bottom: -16px;
+    }
+
+/* 閉じるエリア */
+#nav-close{
+    z-index: 999;
+    /* 重ね順↑　positionの指定必須 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5; /* 透明度 */
+}
+
+/* ボタン押したときに出るナビゲーション */
+#nav-content{
+   display: block;  /* noneしたやつを再表示させる */
+   z-index: 9999;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 70%;
+   height: 100%;
+   background-color: #fff;
+   text-align: left;
+   padding: 15px 0 0 24px;
+   box-shadow: 5px 0 25px rgba(0,0,0,0.25);
+   transform: translateX(-105%);
+   transition: 0.3s ease-in-out; /* 状態変化の指定 */
+}
+
+.nav-drawer__title{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fa6988;
+    margin-bottom: 46px;
+}
+
+.nav-drawer__link-top{
+    display: block;
+}
+
+#nav-content ul li{
+    margin-bottom: 36px;
+}
+
+#nav content ul li a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* チェックがonになると表示される黒い透明部分 */
+#nav-input:checked~#nav-close{ 　/* 間接セレクタ。✔されてる時用 */
+    display: block;
+}
+
+/* チェックがonになると表示されるナビゲーション */
+#nav-input:checked~#nav-content{
+    transform: translateX(0%);
+}
+
+ } /*finmedia */
+
+ /* スマホのheader */
+ .header h1{
+    font-size: 1.3rem;
+    color: #fa6988;
+    position: absolute;
+    left: 24px;
+    top: 10px;
+}
+
+.header__navigation{
+    display: none;
+}
+
+/* pc用のheader */
+@media(min-width:480px){
+    .header{
+max-width: 1040px;
+margin: 0 auto;
+min-height: 50px;
+padding: 14px;
+box-sizing: border-box; /* paddingを1040に含ませるための指定 */
+    }
+
+    .header h1{
+        font-size: 2rem;
+        top: 14px;
+    }
+.header__navigation{
+display: block;     /* スマホで消したものの再表示 */
+text-align: right;
+}
+
+.header__navigation ul li{
+display: inline-block;     /* 横並びにしつつブロック的な配置（ブロック要素は基本的に積み重ねしかできない） */
+margin-left:40px ;
+}
+
+.header__navigation ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+}/* mediafin */
+
+/* 幅が狭いときの調整 */
+@media(max-width 550px)and(min-width:480px){
+    .header__navigation ul li{
+        margin-left: 10px;
+    }
+}
+
+@media(width:480px){
+    #nav-drawer{
+        padding: 0;
+    }
+}
+
+.main{
+    background-color: #f6f8f9;
+}
+
+/* 1040px以上の時に下に120の余白を付ける */
+@media(min-width:1040px){
+    .main{
+        padding-bottom: 120px;
+    }
+}
+
+/* spのtop_section */
+.top_section{
+    margin-bottom: 60px;
+}
+
+.top_section__image{
+    height: 380px;
+    background-image: url(../images/top_image.jpg);
+    background-position: center;
+   background-size: auto 100%;  /* 幅と高さの指定（この場合、高さを基準にしろという指定） */
+   background-repeat: no-repeat;
+   color: #fff;
+   font-weight: 600;
+   margin-bottom: 40px;
+   position: relative;
+}
+
+.top_section__image h2{
+    font-size: 1.6rem;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+}
+
+.top_section__image-message{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.top_section_lead{
+    margin: 0 24px;
+}
+
+@media(min-width:480px){
+    .top_section__image{
+        height: 600px;
+        margin-bottom: 80px;
+    }
+
+    .top_section__image h2{
+        font-size: 1.2rem;
+        position: static;
+        max-width: 1040px; これを指定することでどんなに幅広になってもボックス内の左寄せの位置に固定される（下で左寄せ指定してるので）
+        margin: 0 auto;
+        text-align: left;
+        padding: 60px 0 0 24px;    /* box内の余白（marginはボックス外の余白） */
+    }
+
+    .top_section__image-message{
+        font-size: 2.0rem;
+        position: static;
+        max-width: 1040px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 25px 0 0 24px;
+    }
+
+    .top_section__lead{
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 4.0rem;   /* 行間はフォントサイズの1.5倍か2倍がゆったり読める数値 */
+    }
+
+}
+
+.menu_section{
+    margin-bottom: 80px;
+}
+
+.menu_section h2{
+    margin-bottom: 40px;
+}
+
+.menu_section ul{
+    margin: 0 24px;
+    list-style: none;
+}
+
+.menu_section ul li{
+    max-width: 327px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius:  6px;
+    text-align: left;
+}
+
+.menu_section__item-picture{
+    width: 100%;
+    height: 186px;
+    object-fit: cover;   /* 画像をトリミングしたいときに使う。これで縦横比固定 */
+    object-position: 0 0;  /* トリミングの位置調整。0は左上、50なら真ん中、100なら下から */
+    border-radius: 6px 6px 0 0; /* 左上から時計回り */
+}
+
+.menu_section__item-title{
+    padding: 14px 20px;
+}
+
+.menu_section__item-description{
+    padding: 0 20px 20px 20px;
+}
+
+.menu_section__item-description span{
+    font-size: 1.2rem;
+}
+
+@media(min-width:1040px){
+    .menu_section{
+        margin-bottom: 20px;
+    }
+
+    .menu_section ul{
+        max-width: 1040px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .menu_section ul li{
+        display: inline-block; /* htmlのli間の半角が反映してしまう（自動的に隙間が入るためcssの指示に干渉する）ため、htmlのliの間に空のコメントを入れ改行することで回避する */
+        width: 320px;
+        margin-right: 40px;
+    }
+
+   .menu_section ul li:last-child{  /* 最後の要素にだけという疑似クラス */
+        margin-right: 0;
+    }
+}
+
+.access_section{
+    padding-top: 40px;
+    background-color: #fff;
+    margin-bottom: 60px;
+}
+
+.access_section h2{
+    margin-bottom: 40px;
+}
+
+.access_section address{
+    font-style: normal; /* 斜体になるのを戻す */
+    margin-bottom: 40px;
+}
+
+.access_section_map{
+    height: 330px;
+}
+
+.access_section_map iframe{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #333;  /* 地図まわりに線をつける。SPの時に下線がみえないのは仕方なし */
+    box-sizing: border-box;　  /* commonでも指定するが、iframeの外部サイトにはうまく適用されないため、再度指定している。指定しない状態だと、borderの1pxスクロールできるようになってしまう */
+}
+
+/* spの時だけ改行させる */
+.access_section__break::after{
+    content: "\A"; /* cssで改行を意味する */
+    white-space: pre;　/* 半角スペースに変換される改行を表示上の改行にする */
+}
+
+@media(min-width:1040px){
+    .access_section{
+        padding: 60px 36px;
+        margin: 0 auto 60px; /* 上、左右、下の指定 */
+        max-width: 1040px;
+        box-sizing: border-box;
+    }
+
+    .access_section h2{
+        border-bottom: solid 1px #333;
+        padding-bottom: 40px;
+        margin-bottom: 30px;
+    }
+
+    .access_section address{
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+    }
+
+    .access_section__break::after{
+       content: "";  /* spで指定した"\A"を消す */
+    }
+}
